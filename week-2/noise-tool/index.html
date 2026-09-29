@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.2/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <h1>Noise Tool</h1>
+    <p>Use the tool below by changing the slider values</p>
+
+    <p>Offset</p>
+    <input id="offsetInput" type="range" min="0" max="100" step="0.01" value="0"/>
+    <label>
+      <input id="autoInput" type="checkbox"/>
+      Auto offset
+    </label>
+
+    <p>Gap</p>
+    <input id="gapInput" type="range" min="4" max="30" step="1" value="10"/>
+
+    <p>Dot colors (small dots → big dots)</p>
+    <input id="colorInput1" type="color" value="#ff4f9a"/>
+    <input id="colorInput2" type="color" value="#3de0ff"/>
+
+    <p>Background</p>
+    <input id="bgInput" type="color" value="#14112b"/>
+
+    <p>Shape</p>
+    <select id="shapeInput">
+      <option value="circle">Circles</option>
+      <option value="square">Squares</option>
+    </select>
+
+    <br><br>
+    <button id="downloadButton">Save</button>
+    <script src="sketch.js"></script>
+    <script src="tool.js"></script>
+  </body>
+</html>
