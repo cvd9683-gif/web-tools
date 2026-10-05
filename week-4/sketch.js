@@ -35,6 +35,13 @@ function dotGrid() {
   background(window.bgColor);
   noStroke();
   rectMode(CENTER);
+  // for the "letters" shape: draw each character centered on its spot
+  textAlign(CENTER, CENTER);
+  textFont("monospace");
+
+  // characters from light to heavy, like in ASCII art tools
+  // small noise values get a "." and big ones get a "@"
+  let characters = " .:-=+*#%@";
 
   let offset = Number(window.offset) || 0;
   let gap = Number(window.gap) || 10;
@@ -55,6 +62,11 @@ function dotGrid() {
 
       if (window.shape == "square") {
         square(x, y, diameter);
+      } else if (window.shape == "letters") {
+        // turn the noise value (0-1) into a spot in the characters list
+        let index = floor(noiseValue * characters.length);
+        textSize(gap);
+        text(characters[index], x, y);
       } else {
         circle(x, y, diameter);
       }

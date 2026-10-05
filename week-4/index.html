@@ -31,6 +31,7 @@
           <select id="shapeInput">
             <option value="circle">circles</option>
             <option value="square">squares</option>
+            <option value="letters">letters</option>
           </select>
         </label>
       </div>
@@ -46,8 +47,17 @@
         </label>
       </div>
 
-      <!-- third row: buttons -->
+      <!-- palette buttons: each one sets all three colors at once -->
       <div class="controls">
+        <button class="paletteButton" id="paletteNight" style="background: linear-gradient(to right, #ff4f9a, #3de0ff, #14112b);" title="night"></button>
+        <button class="paletteButton" id="paletteSunset" style="background: linear-gradient(to right, #ffd23f, #ee4266, #540d6e);" title="sunset"></button>
+        <button class="paletteButton" id="paletteForest" style="background: linear-gradient(to right, #a7c957, #f2e8cf, #386641);" title="forest"></button>
+        <button class="paletteButton" id="palettePaper" style="background: linear-gradient(to right, #e63946, #1d3557, #f1faee);" title="paper"></button>
+      </div>
+
+      <!-- buttons -->
+      <div class="controls">
+        <button id="mutateButton">mutate</button>
         <button id="addButton">+ keep</button>
         <button id="downloadButton">save</button>
       </div>
@@ -58,6 +68,17 @@
         <p id="emptyMessage">Nothing here yet. Click "+ keep" to save a pattern here.</p>
         <!-- tool.js adds an <img> in here for each pattern -->
         <div id="gallery"></div>
+      </div>
+
+      <!-- the tools from Everest Pipkin's tools list that inspired this -->
+      <div class="credits">
+        <p>ideas borrowed from <a href="https://github.com/everestpipkin/tools-list">Everest Pipkin's tools list</a>:</p>
+        <p>
+          <a href="https://coolors.co/">coolors</a> (palettes) ·
+          <a href="https://lorenschmidt.itch.io/pattern-mutation-tool">pattern mutation</a> (mutate) ·
+          <a href="http://ascii.alienmelon.com/">ASCII PAINT</a> (letters) ·
+          <a href="https://webaim.org/resources/contrastchecker/">Contrast Checker</a> (text colors)
+        </p>
       </div>
     </div>
 

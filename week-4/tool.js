@@ -92,3 +92,43 @@ function addToGallery() {
   document.getElementById("gallery").appendChild(img);
   document.getElementById("emptyMessage").style.display = "none";
 }
+
+// ---- Palettes ----
+// inspired by coolors: each button sets all three colors at once
+
+function setPalette(small, big, background) {
+  colorPicker1.value = small;
+  colorPicker2.value = big;
+  bgPicker.value = background;
+  onChange();
+}
+
+document.getElementById("paletteNight").addEventListener("click", function () {
+  setPalette("#ff4f9a", "#3de0ff", "#14112b");
+});
+document.getElementById("paletteSunset").addEventListener("click", function () {
+  setPalette("#ffd23f", "#ee4266", "#540d6e");
+});
+document.getElementById("paletteForest").addEventListener("click", function () {
+  setPalette("#a7c957", "#f2e8cf", "#386641");
+});
+document.getElementById("palettePaper").addEventListener("click", function () {
+  setPalette("#e63946", "#1d3557", "#f1faee");
+});
+
+// ---- Mutate ----
+// inspired by pattern mutation: change the pattern a little bit at random
+
+document.getElementById("mutateButton").addEventListener("click", mutate);
+
+function mutate() {
+  // jump to a random offset
+  offsetSlider.value = Math.random() * 100;
+  window.offset = offsetSlider.value;
+
+  // make the gap a little bigger or smaller (between -2 and +2)
+  let change = Math.round(Math.random() * 4 - 2);
+  gapSlider.value = Number(gapSlider.value) + change;
+
+  onChange();
+}
