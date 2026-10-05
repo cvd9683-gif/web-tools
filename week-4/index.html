@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.2/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <!-- everything is in one centered column -->
+    <div class="page">
+      <h1>noise</h1>
+      <p class="intro">Move the sliders. Pick some colors. Keep the ones you like.</p>
+
+      <div id="canvasHolder"></div>
+
+      <!-- one row of controls under the canvas -->
+      <div class="controls">
+        <label>
+          offset
+          <input id="offsetInput" type="range" min="0" max="100" step="0.01" value="0"/>
+        </label>
+        <label>
+          gap
+          <input id="gapInput" type="range" min="4" max="30" step="1" value="10"/>
+        </label>
+        <label>
+          shape
+          <select id="shapeInput">
+            <option value="circle">circles</option>
+            <option value="square">squares</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- second row: colors and auto -->
+      <div class="controls">
+        <input id="colorInput1" type="color" value="#ff4f9a" title="small dots"/>
+        <input id="colorInput2" type="color" value="#3de0ff" title="big dots"/>
+        <input id="bgInput" type="color" value="#14112b" title="background"/>
+        <label class="check">
+          <input id="autoInput" type="checkbox"/>
+          move
+        </label>
+      </div>
+
+      <!-- third row: buttons -->
+      <div class="controls">
+        <button id="addButton">+ keep</button>
+        <button id="downloadButton">save</button>
+      </div>
+
+      <!-- the gallery of kept patterns -->
+      <div class="gallerySection">
+        <h2>kept</h2>
+        <p id="emptyMessage">Nothing here yet. Click "+ keep" to save a pattern here.</p>
+        <!-- tool.js adds an <img> in here for each pattern -->
+        <div id="gallery"></div>
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+    <script src="tool.js"></script>
+  </body>
+</html>
